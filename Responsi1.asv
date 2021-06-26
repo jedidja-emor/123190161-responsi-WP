@@ -1,0 +1,11 @@
+dataset = readtable('Real estate valuation data set.xlsx');
+x = cat(2,dataset(1:50,3:5),dataset(1:50,8:8));
+x = table2array(x);
+k = [0,0,1,0];
+w = [3,5,4,1];
+result = hitungWP(x,k,w);
+maxs = max(result);
+index = find(result == maxs);
+stringResult = dataset(,index);
+X = sprintf('Hasil Max %d',max(stringResult));
+disp(X);
